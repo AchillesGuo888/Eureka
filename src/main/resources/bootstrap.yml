@@ -1,0 +1,24 @@
+server:
+  port: 8761
+
+spring:
+  security:
+    user:
+      name: admin
+      password: admin123
+
+logging:
+  level:
+    com.netflix.discovery: DEBUG  #set the log level of Eureka Client->DEBUG
+    com.netflix.eureka: DEBUG
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://admin:admin123@127.0.0.1:8761/eureka/
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    enable-self-preservation: false
